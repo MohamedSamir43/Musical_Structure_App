@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dobry.musicalstructure.MusicStore">
+
+    <LinearLayout
+        android:id="@+id/settingsTopMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark_color"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/settingsMenuNowIsPlaying"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_now_is_playing"
+            android:text="@string/now_is_playing_name"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/settingsMenuAlbums"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_albums"
+            android:text="@string/albums_name"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/settingsMenuArtist"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_artists"
+            android:text="@string/artist_name"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/settingsTopMenuSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_settings"
+            android:text="@string/settings_name"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewOfAlbums"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <SearchView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:queryHint="Enter the search criteria" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/little_margin"
+                    android:layout_weight="1"
+                    android:background="@color/accent_color"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/coverOfAlbum1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/little_margin"
+                        android:src="@drawable/awolnationcover" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/little_margin"
+                        android:layout_marginLeft="@dimen/little_margin"
+                        android:layout_marginRight="@dimen/little_margin"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nameOfBand1"
+                            style="@style/NameOfBand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/awolnation_band_name" />
+
+                        <TextView
+                            style="@style/TitleOfAlbum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/run_album" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/infoAlbum1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_info_outline_white_18dp" />
+
+                            <ImageButton
+                                android:id="@+id/addToShoppingCartAlbum1"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_shopping_cart_white_18dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/little_margin"
+                    android:layout_weight="1"
+                    android:background="@color/accent_color"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/little_margin"
+                        android:src="@drawable/abneypark" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/little_margin"
+                        android:layout_marginLeft="@dimen/little_margin"
+                        android:layout_marginRight="@dimen/little_margin"
+                        android:gravity=""
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/NameOfBand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/abney_park_band_name" />
+
+                        <TextView
+                            style="@style/TitleOfAlbum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/lost_horizons_album_name" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/infoAlbum2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_info_outline_white_18dp" />
+
+                            <ImageButton
+                                android:id="@+id/addToShoppingCartAlbum2"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_shopping_cart_white_18dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/little_margin"
+                    android:layout_weight="1"
+                    android:background="@color/accent_color"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/coverOfAlbum3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/little_margin"
+                        android:src="@drawable/examplecover" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/little_margin"
+                        android:layout_marginLeft="@dimen/little_margin"
+                        android:layout_marginRight="@dimen/little_margin"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/nameOfBand3"
+                            style="@style/NameOfBand"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/example_band_name" />
+
+                        <TextView
+                            style="@style/TitleOfAlbum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/won_t_go_quietly_album_name" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/infoAlbum3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_info_outline_white_18dp" />
+
+                            <ImageButton
+                                android:id="@+id/addToShoppingCartAlbum3"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_shopping_cart_white_18dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_margin="@dimen/little_margin"
+                    android:layout_weight="1"
+                    android:background="@color/accent_color"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="@dimen/little_margin"
+                        android:src="@drawable/tiestocover" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/little_margin"
+                        android:layout_marginLeft="@dimen/little_margin"
+                        android:layout_marginRight="@dimen/little_margin"
+                        android:gravity=""
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/NameOfBand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/tiesto_band_name" />
+
+                        <TextView
+                            style="@style/TitleOfAlbum"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/say_something_album_name" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/infoAlbum4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_info_outline_white_18dp" />
+
+                            <ImageButton
+                                android:id="@+id/addToShoppingCartAlbum4"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:backgroundTint="@color/primary_color"
+                                android:src="@drawable/ic_shopping_cart_white_18dp" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="@string/music_store_screen_description" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

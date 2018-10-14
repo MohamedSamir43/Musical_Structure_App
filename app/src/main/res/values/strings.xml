@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Musical Structure</string>
+    <string name="albums_name">Albums</string>
+    <string name="artist_name">Artists</string>
+    <string name="music_store_name">Music Store</string>
+    <string name="settings_name">Settings</string>
+    <string name="now_playing">Now Playing</string>
+    <string name="albums">Albums</string>
+    <string name="artist">Artist</string>
+    <string name="music_store">Music Store</string>
+    <string name="settings">Settings</string>
+    <string name="now_is_playing_name">Now is playing</string>
+
+    <string name="awolnation_band_name">Awolnation</string>
+    <string name="abney_park_band_name">Abney Park</string>
+    <string name="lost_horizons_album_name">Lost Horizons</string>
+    <string name="run_album">Run</string>
+    <string name="now_is_playing_screen_descriptions">Here is the main screen for listening to songs. You can change songs, loop songs, play randomly, change volume and scroll through songs. There is also an option for buying the current songs, but it requires implement some transaction API</string>
+    <string name="settings_register_message">Register function hasn\'t been implemented yet</string>
+    <string name="settings_login_message">Login function hasn\'t been implemented yet</string>
+    <string name="albums_screen_description">Here is an album list screen. This screen should support scrolling. You can add an album to the playlist (the \'Add to playlist\' button, the \'Play list\' screen should be implemented) or play the selected album by clicking on the \'Play\' button. When clicked, the user is moved to the \'Now is playing\' screen.</string>
+    <string name="example_artist">EXAMPLE</string>
+    <string name="example_about_artist">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit dictum justo at feugiat. Cras finibus et arcu pharetra pretium. Proin ultrices nunc vel commodo aliquet. Maecenas dignissim vulputate.</string>
+    <string name="read_more_button_name">Read more</string>
+    <string name="david_guetta_artist">DAVID GUETTA</string>
+    <string name="david_guetta_about_artist">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit dictum justo at feugiat. Cras finibus et arcu pharetra pretium. Proin ultrices nunc vel commodo aliquet. Maecenas dignissim vulputate.</string>
+    <string name="pitbull_artist">PITBULL</string>
+    <string name="pitbull_about_artist">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit dictum justo at feugiat. Cras finibus et arcu pharetra pretium. Proin ultrices nunc vel commodo aliquet. Maecenas dignissim vulputate.</string>
+    <string name="dj_tiesto_artist">DJ TIESTO</string>
+    <string name="dj_tiesto_about_artist">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent suscipit dictum justo at feugiat. Cras finibus et arcu pharetra pretium. Proin ultrices nunc vel commodo aliquet. Maecenas dignissim vulputate.</string>
+    <string name="artist_screen_description">This is a scrolling screen with descriptions of artists. You can click on \'Read more\' and then you will be move to resources available on the web. Function is not implemented, should be used \'intent\' url</string>
+    <string name="example_band_name">Example</string>
+    <string name="won_t_go_quietly_album_name">Won\'t Go Quietly</string>
+    <string name="tiesto_band_name">TIESTO</string>
+    <string name="say_something_album_name">Say Something</string>
+    <string name="music_store_screen_description">Here is a music store screen, you can search for albums using the search engine, read album information by pressing the \'info\' button, and also buy an album using the \'basket\' button. The screen is scrollable.</string>
+    <string name="e_mail_login_spotify_settings">E-mail / Login</string>
+    <string name="password_spotify_settings">Password</string>
+    <string name="register_spotify_button_name">Register</string>
+    <string name="login_spotify_button_name">Login</string>
+    <string name="settings_screen_description">The player will work on the integration with Spotify API by using Spotify Android SDK. The Spotify Android SDK makes it easy to add Spotify functionality to your Android app. The SDK contains two small footprint binary libraries packaged as Android archives (AAR): Spotify Authentication Library and Spotify Player Library. You will be able to sign in or create an account from within the app. An additional option would be logging in via a Facebook and Google account</string>
+    <string name="login_via_facebook_settings_button_name">Login via Facebook</string>
+    <string name="login_via_google_settings_button_name">Login via Google</string>
+    <string name="current_song_name">Steam Powered Giraffe - Brass Goggles</string>
+    <string name="start_time_of_song">0:00</string>
+    <string name="end_time_of_song">4:12</string>
+</resources>

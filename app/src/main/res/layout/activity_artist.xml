@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.dobry.musicalstructure.Artist">
+
+    <LinearLayout
+        android:id="@+id/settingsTopMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary_dark_color"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/settingsMenuNowIsPlaying"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_now_is_playing"
+            android:text="@string/now_is_playing_name"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/settingsMenuAlbums"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_albums"
+            android:text="@string/albums_name"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/settingsTopMenuSettings"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_settings"
+            android:text="@string/settings_name"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/settingsMenuMusicStore"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:backgroundTint="@color/category_music_store"
+            android:text="@string/music_store_name"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewOfArtist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <SearchView
+                android:id="@+id/searchViewForArtist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:iconifiedByDefault="true"
+                android:queryHint="Search" />
+
+            <!-- Start the section of Artists -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@color/accent_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/example_artist"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/little_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/exampleartist" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/example_about_artist" />
+
+                        <Button
+                            android:id="@+id/readMoreButtonArtist1"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:backgroundTint="@color/primary_color"
+                            android:text="@string/read_more_button_name"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Start the section of Artists -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/little_margin"
+                android:layout_marginLeft="@dimen/little_margin"
+                android:layout_marginRight="@dimen/little_margin"
+                android:background="@color/accent_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/little_margin"
+                    android:layout_marginTop="@dimen/little_margin"
+                    android:text="@string/david_guetta_artist"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/little_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/davidguettaartist" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/david_guetta_about_artist" />
+
+                        <Button
+                            android:id="@+id/readMoreButtonArtist2"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:backgroundTint="@color/primary_color"
+                            android:text="@string/read_more_button_name"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Start the section of Artists -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/little_margin"
+                android:layout_marginLeft="@dimen/little_margin"
+                android:layout_marginRight="@dimen/little_margin"
+                android:background="@color/accent_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/little_margin"
+                    android:layout_marginTop="@dimen/little_margin"
+                    android:text="@string/pitbull_artist"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/little_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pitbullartist" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/pitbull_about_artist" />
+
+                        <Button
+                            android:id="@+id/readMoreButtonArtist3"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:backgroundTint="@color/primary_color"
+                            android:text="@string/read_more_button_name"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Start the section of Artists -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/little_margin"
+                android:layout_marginLeft="@dimen/little_margin"
+                android:layout_marginRight="@dimen/little_margin"
+                android:background="@color/accent_color"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/little_margin"
+                    android:layout_marginTop="@dimen/little_margin"
+                    android:text="@string/dj_tiesto_artist"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="@dimen/little_margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/tiestoartist" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="1"
+                            android:text="@string/dj_tiesto_about_artist" />
+
+                        <Button
+                            android:id="@+id/readMoreButtonArtist4"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_weight="0.4"
+                            android:backgroundTint="@color/primary_color"
+                            android:text="@string/read_more_button_name"
+                            android:textColor="@android:color/white" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white"
+                android:text="@string/artist_screen_description" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>
