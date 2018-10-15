@@ -6,21 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+
+    @BindView(R.id.nowPlaying) LinearLayout nowPlaying;
+    @BindView(R.id.albums) LinearLayout albums;
+    @BindView(R.id.artists) LinearLayout artists;
+    @BindView(R.id.musicStore) LinearLayout musicStore;
+    @BindView(R.id.settings) LinearLayout settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ButterKnife.bind(this);
         // Find the Layout that shows the Now Is Playing category
-        LinearLayout nowIsPlaying = (LinearLayout) findViewById(R.id.nowIsPlaying);
-        LinearLayout albums = (LinearLayout) findViewById(R.id.albums);
-        LinearLayout artists = (LinearLayout) findViewById(R.id.artists);
-        LinearLayout musicStore = (LinearLayout) findViewById(R.id.musicStore);
-        LinearLayout settings = (LinearLayout) findViewById(R.id.settings);
 
-        nowIsPlaying.setOnClickListener(new View.OnClickListener() {
+        nowPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent nowIsPlayingIntent = new Intent(MainActivity.this, NowIsPlaying.class);
