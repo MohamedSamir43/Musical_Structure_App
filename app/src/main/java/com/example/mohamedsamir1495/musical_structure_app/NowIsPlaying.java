@@ -8,26 +8,54 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class NowIsPlaying extends AppCompatActivity {
+
+    // Mapping for all media player buttons
+
+    @BindView(R.id.playSongButton)
+    ImageButton playButton;
+
+    @BindView(R.id.previousSongButton)
+    ImageButton previousSongButton;
+
+    @BindView(R.id.nextSongButton)
+    ImageButton nextSongButton;
+
+//    @BindView(R.id.repeatButton)
+//    ImageButton repeatButton;
+//
+//    @BindView(R.id.shuffleButton)
+//    ImageButton shuffleButton;
+//
+//    @BindView(R.id.buyCurrentSongButton)
+//    ImageButton buyCurrentSongButton;
+
+    // Mapping for all buttons in the top corner screen
+
+    @BindView(R.id.TopMenuSettings)
+    Button settingsTopMenuButton;
+
+    @BindView(R.id.TopMenuAlbums)
+    Button albumsTopMenuButton;
+
+    @BindView(R.id.TopMenuArtist)
+    Button artistTopMenuButton;
+
+    @BindView(R.id.TopMenuMusicStore)
+    Button musicStoreTopMenuButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_now_is_playing);
+        ButterKnife.bind(this);
 
 
-        // Mapping for all buttons on the screen
-        ImageButton playButton = (ImageButton) findViewById(R.id.playSongButton);
-        ImageButton previousSongButton = (ImageButton) findViewById(R.id.previousSongButton);
-        ImageButton nextSongButton = (ImageButton) findViewById(R.id.nextSongButton);
-        ImageButton repeatButton = (ImageButton) findViewById(R.id.repeatButton);
-        ImageButton shuffleButton = (ImageButton) findViewById(R.id.shuffleButton);
-        ImageButton buyCurrentSongButton = (ImageButton) findViewById(R.id.buyCurrentSongButton);
 
-        Button albumsTopMenuButton = (Button) findViewById(R.id.settingsMenuAlbums);
-        Button artistTopMenuButton = (Button) findViewById(R.id.settingsMenuArtist);
-        Button musicStoreTopMenuButton = (Button) findViewById(R.id.settingsMenuMusicStore);
-        Button settingsTopMenuButton = (Button) findViewById(R.id.settingsTopMenuSettings);
 
         // Listeners for info buttons
         // CLICKS ON TOP MENU BUTTONS
@@ -85,26 +113,26 @@ public class NowIsPlaying extends AppCompatActivity {
             }
         });
 
-        repeatButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Song will be repeated", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        shuffleButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Shuffle has been enabled", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        buyCurrentSongButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "You decided buy this song. Thank you.", Toast.LENGTH_SHORT).show();
-            }
-        });
+//        repeatButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(), "Song will be repeated", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        shuffleButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(), "Shuffle has been enabled", Toast.LENGTH_SHORT).show();
+//            }
+//        });
+//
+//        buyCurrentSongButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Toast.makeText(getApplicationContext(), "You decided buy this song. Thank you.", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 
     }
 }
