@@ -1,5 +1,7 @@
 package widgets;
 
+//Big thanks for andro selva and his great implementation
+// https://github.com/AndroSelva/Vertical-SeekBar-Android
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;

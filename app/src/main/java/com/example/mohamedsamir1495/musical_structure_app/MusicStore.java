@@ -6,38 +6,51 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import Adapters.AlbumAdapter;
+import Adapters.MusicStoreListAdapter;
+import Models.AlbumModel;
+import Models.StoreItemModel;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MusicStore extends AppCompatActivity {
 
+    @BindView(R.id.settingsMenuNowPlaying)
+    Button nowPlayingTopMenuButton;
+
+    @BindView(R.id.settingsMenuAlbums)
+    Button albumsTopMenuButton;
+
+    @BindView(R.id.settingsMenuArtist)
+    Button artistTopMenuButton;
+
+    @BindView(R.id.settingsTopMenuSettings)
+    Button settingsTopMenuButton;
+
+    @BindView(R.id.storeItemList)
+    ListView storeItemList;
+
+    MusicStoreListAdapter mAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_music_store);
-
+        ButterKnife.bind(this);
 
         // Mapping buttons for MusicStore screen
-        ImageButton infoButtonAlbum1 = (ImageButton) findViewById(R.id.infoAlbum1);
-        ImageButton infoButtonAlbum2 = (ImageButton) findViewById(R.id.infoAlbum2);
-        ImageButton infoButtonAlbum3 = (ImageButton) findViewById(R.id.infoAlbum3);
-        ImageButton infoButtonAlbum4 = (ImageButton) findViewById(R.id.infoAlbum4);
 
-        ImageButton addToShoppingCartButtonAlbum1 = (ImageButton) findViewById(R.id.addToShoppingCartAlbum1);
-        ImageButton addToShoppingCartButtonAlbum2 = (ImageButton) findViewById(R.id.addToShoppingCartAlbum2);
-        ImageButton addToShoppingCartButtonAlbum3 = (ImageButton) findViewById(R.id.addToShoppingCartAlbum3);
-        ImageButton addToShoppingCartButtonAlbum4 = (ImageButton) findViewById(R.id.addToShoppingCartAlbum4);
-
-        Button nowIsPlayingTopMenuButton = (Button) findViewById(R.id.settingsMenuNowIsPlaying);
-        Button albumsTopMenuButton = (Button) findViewById(R.id.settingsMenuAlbums);
-        Button artistTopMenuButton = (Button) findViewById(R.id.settingsMenuArtist);
-        Button settingsTopMenuButton = (Button) findViewById(R.id.settingsTopMenuSettings);
 
         // Listeners for info buttons
         // CLICKS ON TOP MENU BUTTONS:
-        nowIsPlayingTopMenuButton.setOnClickListener(new View.OnClickListener() {
+        nowPlayingTopMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nowIsPlayingIntent = new Intent(MusicStore.this, NowIsPlaying.class);
+                Intent nowIsPlayingIntent = new Intent(MusicStore.this, NowPlaying.class);
                 startActivity(nowIsPlayingIntent);
             }
         });
@@ -67,61 +80,13 @@ public class MusicStore extends AppCompatActivity {
             }
         });
 
-        infoButtonAlbum1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Info about album 1", Toast.LENGTH_SHORT).show();
-            }
-        });
+        ArrayList<StoreItemModel> mList = new ArrayList<>();
+        mList.add(new StoreItemModel(getString(R.string.amr_diab_artist), getString(R.string.amr_diab_album),R.drawable.amr_diab_album));
+        mList.add(new StoreItemModel(getString(R.string.cheb_khaled_artist), getString(R.string.cheb_khaled_album),R.drawable.cheb_khaled_album));
+        mList.add(new StoreItemModel(getString(R.string.eminem_artist), getString(R.string.eminem_album),R.drawable.eminem_album));
 
-        infoButtonAlbum2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Info about album 2", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        infoButtonAlbum3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Info about album 3", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        infoButtonAlbum4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Info about album 4", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        // Listeners for Add Shopping Card Buttons
-        addToShoppingCartButtonAlbum1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Album has been added to Shopping Card", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        addToShoppingCartButtonAlbum2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Album has been added to Shopping Card", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        addToShoppingCartButtonAlbum3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Album has been added to Shopping Card", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        addToShoppingCartButtonAlbum4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Album has been added to Shopping Card", Toast.LENGTH_SHORT).show();
-            }
-        });
+        mAdapter = new MusicStoreListAdapter(this,mList);
+        storeItemList.setAdapter(mAdapter);
     }
 }

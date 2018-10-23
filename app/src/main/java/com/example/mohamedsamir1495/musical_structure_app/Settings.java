@@ -7,30 +7,48 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Settings extends AppCompatActivity {
+
+    @BindView(R.id.buttonRegister)
+    Button registerButton;
+
+    @BindView(R.id.buttonLogin)
+    Button loginButton;
+
+    @BindView(R.id.loginViaFacebook)
+    Button loginViaFacebook;
+
+    @BindView(R.id.loginViaGoogle)
+    Button loginViaGoogle;
+
+
+    @BindView(R.id.settingsMenuNowPlaying)
+    Button nowPlayingTopMenuButton;
+
+    @BindView(R.id.settingsMenuAlbums)
+    Button albumsTopMenuButton;
+
+    @BindView(R.id.settingsMenuArtist)
+    Button artistTopMenuButton;
+
+    @BindView(R.id.settingsMenuMusicStore)
+    Button musicStoreTopMenuButton;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_settings);
+        ButterKnife.bind(this);
 
-        // Mapping buttons
-        Button registerSpotifyButton = (Button) findViewById(R.id.buttonRegister);
-        Button loginSpotifyButton = (Button) findViewById(R.id.buttonLogin);
-        Button logintoSpotifyViaFacebook = (Button) findViewById(R.id.loginViaFacebook);
-        Button logintoSpotifyViaGoogle = (Button) findViewById(R.id.loginViaGoogle);
-
-        Button nowIsPlayingTopMenuButton = (Button) findViewById(R.id.settingsMenuNowIsPlaying);
-        Button albumsTopMenuButton = (Button) findViewById(R.id.settingsMenuAlbums);
-        Button artistTopMenuButton = (Button) findViewById(R.id.settingsMenuArtist);
-        Button musicStoreTopMenuButton = (Button) findViewById(R.id.settingsMenuMusicStore);
-
-        // Listeners for info buttons
-        // CLICKS ON TOP MENU BUTTONS:
-        nowIsPlayingTopMenuButton.setOnClickListener(new View.OnClickListener() {
+        nowPlayingTopMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nowIsPlayingIntent = new Intent(Settings.this, NowIsPlaying.class);
+                Intent nowIsPlayingIntent = new Intent(Settings.this, NowPlaying.class);
                 startActivity(nowIsPlayingIntent);
             }
         });
@@ -59,28 +77,28 @@ public class Settings extends AppCompatActivity {
             }
         });
 
-        registerSpotifyButton.setOnClickListener(new View.OnClickListener() {
+        registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), R.string.settings_register_message, Toast.LENGTH_SHORT).show();
             }
         });
 
-        loginSpotifyButton.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), R.string.settings_login_message, Toast.LENGTH_SHORT).show();
             }
         });
 
-        logintoSpotifyViaFacebook.setOnClickListener(new View.OnClickListener() {
+        loginViaFacebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), R.string.settings_login_message, Toast.LENGTH_SHORT).show();
             }
         });
 
-        logintoSpotifyViaGoogle.setOnClickListener(new View.OnClickListener() {
+        loginViaGoogle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), R.string.settings_login_message, Toast.LENGTH_SHORT).show();

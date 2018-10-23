@@ -15,7 +15,7 @@
         <Button
             android:id="@+id/TopMenuSettings"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="@color/category_settings"
             android:text="@string/settings_name"
@@ -56,7 +56,7 @@
         android:layout_gravity="center"
         android:layout_weight="3"
         android:scaleType="centerInside"
-        android:src="@drawable/awolnationcover" />
+        android:src="@drawable/amr_diab_album" />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

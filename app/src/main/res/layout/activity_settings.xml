@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.dobry.musicalstructure.Settings">
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/settingsTopMenu"
@@ -14,12 +12,12 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/settingsMenuNowIsPlaying"
+            android:id="@+id/settingsMenuNowPlaying"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:backgroundTint="@color/category_now_is_playing"
-            android:text="@string/now_is_playing_name"
+            android:text="@string/now_playing_name"
             android:textColor="@android:color/white" />
 
         <Button
@@ -50,11 +48,13 @@
             android:textColor="@android:color/white" />
     </LinearLayout>
 
-    <LinearLayout
+
+    <ScrollView
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_margin="@dimen/little_margin"
+        android:fillViewport="true"
         android:orientation="vertical">
 
         <LinearLayout
@@ -63,9 +63,9 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/spotify" />
+                android:layout_width="match_parent"
+                android:layout_height="170dp"
+                android:src="@drawable/sound_cloud" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -78,11 +78,11 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:text="@string/e_mail_login_spotify_settings"
+                    android:text="@string/e_mail_login_sound_cloud_settings"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/spotifyEmailAddress"
+                    android:id="@+id/sound_cloudEmailAddress"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
@@ -103,11 +103,11 @@
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
-                    android:text="@string/password_spotify_settings"
+                    android:text="@string/password_sound_cloud_settings"
                     android:textStyle="bold" />
 
                 <EditText
-                    android:id="@+id/spotifyPassword"
+                    android:id="@+id/sound_cloudPassword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="bottom"
@@ -137,7 +137,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="@color/primary_color"
                         android:drawableLeft="@drawable/ic_person_add_white_18dp"
-                        android:text="@string/register_spotify_button_name"
+                        android:text="@string/register_sound_cloud_button_name"
                         android:textColor="@android:color/white" />
 
                     <Button
@@ -147,7 +147,7 @@
                         android:layout_weight="1"
                         android:backgroundTint="@color/category_albums"
                         android:drawableLeft="@drawable/ic_vpn_key_white_18dp"
-                        android:text="@string/login_spotify_button_name"
+                        android:text="@string/login_sound_cloud_button_name"
                         android:textColor="@android:color/white" />
 
                 </LinearLayout>
@@ -176,18 +176,7 @@
 
         </LinearLayout>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="@dimen/little_margin"
-                android:text="@string/settings_screen_description" />
-
-        </ScrollView>
-
-    </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

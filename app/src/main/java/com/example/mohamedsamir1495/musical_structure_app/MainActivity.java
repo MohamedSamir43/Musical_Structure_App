@@ -9,6 +9,10 @@ import android.widget.LinearLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+
+//Big thanks for andro selva and his great implementation
+//https://github.com/AndroSelva/Vertical-SeekBar-Android
+
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.nowPlaying) LinearLayout nowPlaying;
@@ -27,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         nowPlaying.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nowIsPlayingIntent = new Intent(MainActivity.this, NowIsPlaying.class);
+                Intent nowIsPlayingIntent = new Intent(MainActivity.this, NowPlaying.class);
                 startActivity(nowIsPlayingIntent);
             }
         });

@@ -30,8 +30,8 @@
             android:name=".Settings"
             android:label="@string/settings_name" />
         <activity
-            android:name=".NowIsPlaying"
-            android:label="@string/now_is_playing_name" />
+            android:name=".NowPlaying"
+            android:label="@string/now_playing_name" />
 
     </application>
 

@@ -5,33 +5,49 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import Adapters.ArtistAdapter;
+import Models.ArtistModel;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class Artist extends AppCompatActivity {
+
+    @BindView(R.id.settingsMenuNowPlaying)
+    Button nowPlayingTopMenuButton;
+
+    @BindView(R.id.settingsMenuAlbums)
+    Button albumsTopMenuButton;
+
+    @BindView(R.id.settingsMenuMusicStore)
+    Button musicStoreTopMenuButton;
+
+    @BindView(R.id.settingsTopMenuSettings)
+    Button settingsTopMenuButton;
+
+    @BindView(R.id.artistList)
+    ListView artistList;
+
+    private ArtistAdapter mAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_artist);
+        ButterKnife.bind(this);
 
         // Mapping buttons
-        Button readMoreArtist1 = (Button) findViewById(R.id.readMoreButtonArtist1);
-        Button readMoreArtist2 = (Button) findViewById(R.id.readMoreButtonArtist2);
-        Button readMoreArtist3 = (Button) findViewById(R.id.readMoreButtonArtist3);
-        Button readMoreArtist4 = (Button) findViewById(R.id.readMoreButtonArtist4);
-
-        Button nowIsPlayingTopMenuButton = (Button) findViewById(R.id.settingsMenuNowIsPlaying);
-        Button albumsTopMenuButton = (Button) findViewById(R.id.settingsMenuAlbums);
-        Button musicStoreTopMenuButton = (Button) findViewById(R.id.settingsMenuMusicStore);
-        Button settingsTopMenuButton = (Button) findViewById(R.id.settingsTopMenuSettings);
-
 
         // Listeners for buttons
         // CLICKS ON TOP MENU BUTTONS:
-        nowIsPlayingTopMenuButton.setOnClickListener(new View.OnClickListener() {
+        nowPlayingTopMenuButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent nowIsPlayingIntent = new Intent(Artist.this, NowIsPlaying.class);
+                Intent nowIsPlayingIntent = new Intent(Artist.this, NowPlaying.class);
                 startActivity(nowIsPlayingIntent);
             }
         });
@@ -60,34 +76,13 @@ public class Artist extends AppCompatActivity {
             }
         });
 
+        ArrayList<ArtistModel> mList = new ArrayList<>();
+        mList.add(new ArtistModel(getString(R.string.amr_diab_artist), getString(R.string.about_amr_diab),R.drawable.amr_diab));
+        mList.add(new ArtistModel(getString(R.string.cheb_khaled_artist), getString(R.string.about_cheb_khaled),R.drawable.cheb_khaled));
+        mList.add(new ArtistModel(getString(R.string.eminem_artist), getString(R.string.about_eminem),R.drawable.eminem));
 
-        readMoreArtist1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Function not implemented. Missing Intent for opening browser", Toast.LENGTH_SHORT).show();
-            }
-        });
 
-        readMoreArtist2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Function not implemented. Missing Intent for opening browser", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        readMoreArtist3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Function not implemented. Missing Intent for opening browser", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-        readMoreArtist4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Function not implemented. Missing Intent for opening browser", Toast.LENGTH_SHORT).show();
-            }
-        });
-
+        mAdapter = new ArtistAdapter(this,mList);
+        artistList.setAdapter(mAdapter);
     }
 }
